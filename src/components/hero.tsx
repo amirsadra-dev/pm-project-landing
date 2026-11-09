@@ -43,7 +43,7 @@ export function Hero() {
               <ArrowLeftIcon className="size-4 ltr:-scale-x-100" />
             </a>
             <a
-              href="#features"
+              href="/#features"
               className="inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-5 py-3 text-sm font-bold text-slate-700 transition hover:border-slate-300 hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200 dark:hover:border-slate-600 dark:hover:bg-slate-800"
             >
               {t.hero.ctaSecondary}

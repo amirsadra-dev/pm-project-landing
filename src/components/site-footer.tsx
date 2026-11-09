@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { LogoMark } from "./icons";
 import { site } from "@/lib/site";
 import { useSite } from "./site-provider";
@@ -35,12 +36,12 @@ export function SiteFooter() {
             <ul className="mt-4 space-y-2.5">
               {t.nav.map((item) => (
                 <li key={item.href}>
-                  <a
+                  <Link
                     href={item.href}
                     className="text-sm text-slate-500 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400"
                   >
                     {item.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -68,12 +69,12 @@ export function SiteFooter() {
                 </a>
               </li>
               <li>
-                <a
-                  href="#product"
+                <Link
+                  href="/#product"
                   className="text-sm text-slate-500 transition hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400"
                 >
                   {t.footer.productLink}
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

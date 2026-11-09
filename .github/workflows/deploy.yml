@@ -1,0 +1,121 @@
+name: Build and Deploy Landing
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+# Deployments must not run concurrently: two SSH jobs would build and restart
+# the same compose service at the same time. cancel-in-progress is false so a
+# newer push waits instead of leaving the server in a half-deployed state.
+concurrency:
+  group: landing-production
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: Typecheck, build and validate image
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      NEXT_TELEMETRY_DISABLED: "1"
+      # Set this as a repository variable (Settings → Secrets and variables →
+      # Actions → Variables). CI only validates the build; the production
+      # image is rebuilt on the server from its own .env.
+      NEXT_PUBLIC_APP_URL: ${{ vars.NEXT_PUBLIC_APP_URL || 'https://app.example.com' }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Build
+        run: npm run build
+
+      - name: Validate Docker image
+        run: |
+          docker build \
+            --build-arg NEXT_PUBLIC_APP_URL="$NEXT_PUBLIC_APP_URL" \
+            -t pm-project-landing:ci .
+
+  deploy:
+    name: Deploy to production server
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Deploy over SSH
+        uses: appleboy/ssh-action@v1
+        env:
+          DEPLOY_BRANCH: ${{ github.ref_name }}
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.SERVER_SSH_KEY }}
+          port: ${{ secrets.SERVER_PORT || 22 }}
+          envs: DEPLOY_BRANCH
+          script_stop: true
+          command_timeout: 10m
+          script: |
+            set -euo pipefail
+
+            APP_DIR="/opt/myapp/pm-project-landing"
+            BRANCH="${DEPLOY_BRANCH:-main}"
+
+            if [ "$BRANCH" != "main" ]; then
+              echo "Deploy is restricted to main (got $BRANCH)."
+              exit 1
+            fi
+
+            cd "$APP_DIR"
+
+            if [ ! -f .env ]; then
+              echo "Missing $APP_DIR/.env; create it from .env.example first."
+              exit 1
+            fi
+
+            if ! grep -Eq '^[[:space:]]*NEXT_PUBLIC_APP_URL=.+' .env; then
+              echo "NEXT_PUBLIC_APP_URL is missing or empty in $APP_DIR/.env."
+              exit 1
+            fi
+
+            git fetch origin "$BRANCH"
+            git reset --hard "origin/$BRANCH"
+
+            # Fail before rebuilding if the compose file or env is invalid.
+            docker compose config >/dev/null
+
+            docker compose build landing
+            docker compose up -d --no-deps landing
+
+            # Wait for the image healthcheck (Dockerfile: GET /).
+            for i in $(seq 1 24); do
+              cid="$(docker compose ps -q landing || true)"
+              status="none"
+              if [ -n "$cid" ]; then
+                status="$(docker inspect -f '{{.State.Health.Status}}' "$cid" 2>/dev/null || echo none)"
+              fi
+              echo "landing health: $status"
+              if [ "$status" = "healthy" ]; then
+                docker compose ps landing
+                exit 0
+              fi
+              sleep 5
+            done
+
+            echo "Landing did not become healthy; recent logs:"
+            docker compose logs --tail=80 landing
+            exit 1

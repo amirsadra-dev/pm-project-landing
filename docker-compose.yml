@@ -13,7 +13,7 @@ services:
     build:
       context: .
       args:
-        NEXT_PUBLIC_APP_URL: "${NEXT_PUBLIC_APP_URL:-http://localhost:5173}"
+        NEXT_PUBLIC_APP_URL: "${NEXT_PUBLIC_APP_URL:-http://localhost}"
     image: pm-project-landing:latest
     restart: unless-stopped
     ports:

@@ -16,7 +16,7 @@ COPY . .
 
 # NEXT_PUBLIC_* values are inlined into the bundle at build time, so changing
 # the panel URL requires rebuilding the image (see DOCKER.md).
-ARG NEXT_PUBLIC_APP_URL=http://localhost:5173
+ARG NEXT_PUBLIC_APP_URL=http://localhost
 ENV NEXT_PUBLIC_APP_URL=$NEXT_PUBLIC_APP_URL
 
 RUN npm run build

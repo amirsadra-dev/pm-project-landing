@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { ArrowLeftIcon, CloseIcon, LogoMark, MenuIcon, MoonIcon, SunIcon } from "./icons";
 import { site } from "@/lib/site";
@@ -35,12 +36,13 @@ function Controls() {
 
 export function SiteHeader() {
   const { t } = useSite();
+  const pathname = usePathname();
   const [open, setOpen] = useState(false);
 
   return (
     <header className="sticky top-0 z-50 border-b border-slate-200/70 bg-white/80 backdrop-blur-xl dark:border-slate-800/80 dark:bg-slate-950/80">
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
-        <Link href="#top" className="flex items-center gap-3" onClick={() => setOpen(false)}>
+        <Link href="/#top" className="flex items-center gap-3" onClick={() => setOpen(false)}>
           <LogoMark className="size-10" />
           <span className="flex flex-col leading-tight">
             <span className="text-base font-extrabold text-slate-900 dark:text-white">
@@ -52,19 +54,27 @@ export function SiteHeader() {
           </span>
         </Link>
 
-        <nav aria-label={t.ui.mainNav} className="hidden items-center gap-1 lg:flex">
-          {t.nav.map((item) => (
-            <a
-              key={item.href}
-              href={item.href}
-              className="rounded-lg px-3 py-2 text-sm font-medium text-slate-600 transition hover:bg-slate-100 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-white"
-            >
-              {item.label}
-            </a>
-          ))}
+        <nav aria-label={t.ui.mainNav} className="hidden items-center gap-1 xl:flex">
+          {t.nav.map((item) => {
+            const isActive = pathname === item.href;
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                aria-current={isActive ? "page" : undefined}
+                className={`rounded-lg px-3 py-2 text-sm font-medium transition ${
+                  isActive
+                    ? "bg-slate-100 text-slate-900 dark:bg-slate-800 dark:text-white"
+                    : "text-slate-600 hover:bg-slate-100 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-white"
+                }`}
+              >
+                {item.label}
+              </Link>
+            );
+          })}
         </nav>
 
-        <div className="hidden items-center gap-2 lg:flex">
+        <div className="hidden items-center gap-2 xl:flex">
           <Controls />
           <a
             href={site.loginUrl}
@@ -81,7 +91,7 @@ export function SiteHeader() {
           </a>
         </div>
 
-        <div className="flex items-center gap-2 lg:hidden">
+        <div className="flex items-center gap-2 xl:hidden">
           <Controls />
           <button
             type="button"
@@ -96,17 +106,22 @@ export function SiteHeader() {
       </div>
 
       {open ? (
-        <div className="border-t border-slate-200 bg-white px-4 pb-5 pt-3 dark:border-slate-800 dark:bg-slate-950 lg:hidden">
+        <div className="border-t border-slate-200 bg-white px-4 pb-5 pt-3 dark:border-slate-800 dark:bg-slate-950 xl:hidden">
           <nav aria-label={t.ui.mobileNav} className="flex flex-col">
             {t.nav.map((item) => (
-              <a
+              <Link
                 key={item.href}
                 href={item.href}
                 onClick={() => setOpen(false)}
-                className="rounded-lg px-3 py-3 text-sm font-medium text-slate-700 transition hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800"
+                aria-current={pathname === item.href ? "page" : undefined}
+                className={`rounded-lg px-3 py-3 text-sm font-medium transition ${
+                  pathname === item.href
+                    ? "bg-slate-100 text-slate-900 dark:bg-slate-800 dark:text-white"
+                    : "text-slate-700 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800"
+                }`}
               >
                 {item.label}
-              </a>
+              </Link>
             ))}
           </nav>
           <div className="mt-3 grid grid-cols-2 gap-2">

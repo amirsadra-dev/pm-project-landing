@@ -317,3 +317,20 @@ export function MoonIcon(props: IconProps) {
     </Base>
   );
 }
+
+export function MailIcon(props: IconProps) {
+  return (
+    <Base {...props}>
+      <rect x="3" y="5" width="18" height="14" rx="2" />
+      <path d="m4 7 8 6 8-6" />
+    </Base>
+  );
+}
+
+export function PhoneIcon(props: IconProps) {
+  return (
+    <Base {...props}>
+      <path d="M8.5 3.5h-3A1.5 1.5 0 0 0 4 5c0 8.8 7.2 16 16 16a1.5 1.5 0 0 0 1.5-1.5v-3l-5-1.5-2 2a15.5 15.5 0 0 1-6-6l2-2z" />
+    </Base>
+  );
+}

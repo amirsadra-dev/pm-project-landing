@@ -9,6 +9,9 @@ export const site = {
   appUrl,
   loginUrl: `${appUrl}/login`,
   registerUrl: `${appUrl}/register`,
+  // Replace these placeholders with the real inbox and phone number before launch.
+  contactEmail: "hello@pm-project.ir",
+  contactPhone: "+98 21 0000 0000",
 } as const;
 
 export const navigation = [

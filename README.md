@@ -27,6 +27,16 @@ NEXT_PUBLIC_APP_URL=http://localhost:5173
 
 مسیرهای `/login` و `/register` به همین آدرس اضافه می‌شوند.
 
+## مسیرها
+
+| مسیر | توضیح |
+| --- | --- |
+| `/` | لندینگ اصلی |
+| `/about` | درباره ما |
+| `/contact` | تماس با ما و فرم ارسال پیام |
+
+اطلاعات تماس نمایش‌داده‌شده در `src/lib/site.ts` (`contactEmail` و `contactPhone`) قابل تغییر است. فرم تماس بک‌اند ندارد و پیام را با برنامه ایمیل کاربر به همان آدرس می‌فرستد.
+
 ## استقرار با Docker
 
 ```bash
@@ -35,6 +45,10 @@ docker compose up -d --build
 ```
 
 لندینگ روی پورت `3000` (قابل تغییر با `LANDING_PORT`) بالا می‌آید و healthcheck دارد. راهنمای کامل، اجرای بدون Compose و نمونه reverse proxy در [DOCKER.md](./DOCKER.md) آمده است.
+
+## CI/CD
+
+با push روی شاخهٔ `main`، ورک‌فلوی `.github/workflows/deploy.yml` ابتدا typecheck، build و ساخت آزمایشی ایمیج Docker را اجرا می‌کند و سپس لندینگ را با SSH و Docker Compose روی سرور مستقر می‌کند. Secrets، آماده‌سازی سرور و rollback در [DOCKER.md](./DOCKER.md#۷-استقرار-خودکار-cicd) آمده است.
 
 ## تم و زبان
 
@@ -56,9 +70,13 @@ src/
 ├── app/
 │   ├── layout.tsx      # lang="fa" dir="rtl"، متادیتا و اسکریپت تم/زبان
 │   ├── page.tsx        # ترکیب بخش‌های لندینگ
+│   ├── about/page.tsx  # درباره ما
+│   ├── contact/page.tsx# تماس با ما
 │   └── globals.css     # فونت، توکن‌های Tailwind و انیمیشن‌ها
 ├── components/
 │   ├── site-provider.tsx   # وضعیت تم روشن/تیره و زبان فارسی/انگلیسی
+│   ├── about-content.tsx   # محتوای درباره ما
+│   ├── contact-content.tsx # اطلاعات تماس و فرم پیام
 │   ├── site-header.tsx     # هدر چسبان + منوی موبایل + سوییچ تم و زبان
 │   ├── hero.tsx            # معرفی و دکمه‌های اقدام
 │   ├── dashboard-mock.tsx  # پیش‌نمایش داشبورد

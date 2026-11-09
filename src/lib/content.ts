@@ -23,11 +23,13 @@ const fa = {
     summaryLabel: "خلاصه امکانات",
   },
   nav: [
-    { href: "#features", label: "امکانات" },
-    { href: "#product", label: "نمای پنل" },
-    { href: "#workflow", label: "گردش کار" },
-    { href: "#roles", label: "نقش‌ها" },
-    { href: "#faq", label: "سوالات متداول" },
+    { href: "/#features", label: "امکانات" },
+    { href: "/#product", label: "نمای پنل" },
+    { href: "/#workflow", label: "گردش کار" },
+    { href: "/#roles", label: "نقش‌ها" },
+    { href: "/#faq", label: "سوالات متداول" },
+    { href: "/about", label: "درباره ما" },
+    { href: "/contact", label: "تماس با ما" },
   ],
   hero: {
     badge: "نگهداری پیشگیرانه، پروژه‌محور",
@@ -123,12 +125,12 @@ const fa = {
         description: "تأخیرها و قطعات در آستانه انقضا در داشبورد و گزارش‌ها برجسته می‌شوند.",
       },
       {
-        title: "احراز هویت با JWT",
-        description: "ورود امن، توکن دسترسی و توکن تازه‌سازی برای نشست‌های پایدار.",
+        title: "دسترسی پروژه‌محور",
+        description: "اعضای هر پروژه فقط تجهیزات، برنامه‌ها و گزارش‌های همان پروژه را می‌بینند.",
       },
       {
-        title: "API و مجموعه Postman",
-        description: "سرویس Express با PostgreSQL و مجموعه درخواست‌های آماده برای اتصال سریع.",
+        title: "گزارش‌های یکپارچه",
+        description: "وضعیت تجهیزات، برنامه‌ها و قطعات در گزارش‌ها و داشبورد یک‌جا دیده می‌شود.",
       },
     ],
   },
@@ -350,11 +352,77 @@ const fa = {
           "فارسی و انگلیسی. رابط فارسی به‌صورت کامل راست‌به‌چپ و با فونت یکان‌بخ نمایش داده می‌شود و زبان انتخابی در نشست کاربر ذخیره می‌ماند.",
       },
       {
-        question: "برای اتصال به API چه چیزی لازم است؟",
+        question: "چند پروژه را می‌توان هم‌زمان مدیریت کرد؟",
         answer:
-          "پنل روی API مبتنی بر Express و PostgreSQL کار می‌کند و درخواست‌ها با توکن JWT احراز هویت می‌شوند. مجموعه Postman هر دو پروژه برای شروع و آزمایش نقاط پایانی در مخزن موجود است.",
+          "پنل برای چند پروژه طراحی شده است؛ از انتخاب‌گر پروژه در هدر می‌توانید بین پروژه‌ها جابه‌جا شوید و هر پروژه تجهیزات، برنامه‌ها و گزارش‌های خودش را دارد.",
       },
     ],
+  },
+  about: {
+    eyebrow: "درباره ما",
+    title: "نگهداری پیشگیرانه را ساده و قابل اتکا می‌کنیم",
+    description:
+      "پیام پروژه از یک نیاز واقعی شکل گرفت: تیم‌های نگهداری به‌جای جست‌وجو در فایل‌های پراکنده، باید تصویر روشنی از تجهیزات، برنامه‌ها و تأخیرها داشته باشند.",
+    missionTitle: "ماموریت ما",
+    missionText:
+      "داده‌های نگهداری را از فایل‌های پراکنده و یادآوری‌های دستی به یک جریان کاری روشن، پروژه‌محور و قابل پیگیری تبدیل کنیم.",
+    values: [
+      {
+        title: "شفافیت",
+        text: "وضعیت هر تجهیز، برنامه و قطعه باید در یک نگاه روشن باشد؛ بدون گزارش‌های دستی و محاسبات پراکنده.",
+      },
+      {
+        title: "پیشگیری به‌جای واکنش",
+        text: "هشدار تأخیرها و انقضای قطعات پیش از بحرانی شدن، هزینه و توقف را کاهش می‌دهد.",
+      },
+      {
+        title: "فارسی و پروژه‌محور",
+        text: "رابط دوزبانه، دسترسی نقش‌محور و تفکیک داده‌های هر پروژه، ابزار را برای تیم‌های ایرانی مناسب می‌کند.",
+      },
+    ],
+    storyTitle: "چطور کار می‌کنیم",
+    storyText:
+      "هر قابلیت پنل از یک جریان کاری واقعی نگهداری گرفته شده است: تعریف پروژه و تجهیز، زمان‌بندی سرویس، ثبت عملیات، پیگیری قطعات و گزارش‌گیری. تحلیل هوشمند هم همین داده‌ها را می‌خواند تا اقدام بعدی مشخص باشد.",
+    bullets: [
+      "پروژه‌محور با دسترسی نقش‌محور",
+      "برنامه پیشگیرانه، اصلاحی و اضطراری",
+      "ساخت خودکار برنامه بعدی پس از ثبت سرویس",
+      "هشدار ۳۰ روزه انقضای قطعات",
+    ],
+    ctaTitle: "سوالی دارید یا آماده شروع هستید؟",
+    ctaText: "برای آشنایی بیشتر با پنل یا شروع استفاده، با ما در تماس باشید.",
+    ctaContact: "تماس با ما",
+    ctaPanel: "ورود به پنل",
+  },
+  contact: {
+    eyebrow: "تماس با ما",
+    title: "با تیم پیام پروژه صحبت کنید",
+    description:
+      "برای سوال درباره پنل، استقرار سازمانی یا همکاری پیام بگذارید؛ در اولین فرصت پاسخ می‌دهیم.",
+    emailLabel: "ایمیل",
+    phoneLabel: "تلفن",
+    hoursLabel: "ساعات پاسخگویی",
+    hoursValue: "شنبه تا چهارشنبه، ۹ تا ۱۷",
+    form: {
+      title: "ارسال پیام",
+      description:
+        "فرم را پر کنید؛ با زدن دکمهٔ ارسال، برنامه ایمیل شما با متن آماده باز می‌شود و می‌توانید پیام را بفرستید.",
+      name: "نام و نام خانوادگی",
+      namePlaceholder: "نام خود را وارد کنید",
+      email: "ایمیل",
+      emailPlaceholder: "you@example.com",
+      subject: "موضوع",
+      subjectPlaceholder: "موضوع پیام",
+      message: "پیام",
+      messagePlaceholder: "پیام خود را بنویسید...",
+      submit: "ارسال پیام",
+      note: "پیام به ایمیل تیم پیام پروژه ارسال می‌شود.",
+      required: "لطفاً نام، ایمیل و متن پیام را پر کنید.",
+      invalidEmail: "قالب ایمیل معتبر نیست.",
+      success: "برنامه ایمیل شما باز شد؛ برای نهایی شدن، پیام را ارسال کنید.",
+    },
+    directTitle: "ارسال مستقیم",
+    directText: "اگر ترجیح می‌دهید از ایمیل خودتان بنویسید:",
   },
   cta: {
     title: "نگهداری را از واکنش، به پیشگیری ببرید",
@@ -392,11 +460,13 @@ const en: typeof fa = {
     summaryLabel: "Feature highlights",
   },
   nav: [
-    { href: "#features", label: "Features" },
-    { href: "#product", label: "Panel preview" },
-    { href: "#workflow", label: "Workflow" },
-    { href: "#roles", label: "Roles" },
-    { href: "#faq", label: "FAQ" },
+    { href: "/#features", label: "Features" },
+    { href: "/#product", label: "Panel preview" },
+    { href: "/#workflow", label: "Workflow" },
+    { href: "/#roles", label: "Roles" },
+    { href: "/#faq", label: "FAQ" },
+    { href: "/about", label: "About us" },
+    { href: "/contact", label: "Contact us" },
   ],
   hero: {
     badge: "Preventive, project-based maintenance",
@@ -492,12 +562,12 @@ const en: typeof fa = {
         description: "Delays and expiring parts are highlighted on the dashboard and in reports.",
       },
       {
-        title: "JWT authentication",
-        description: "Secure sign-in with access and refresh tokens for persistent sessions.",
+        title: "Project-level access",
+        description: "Members only see the equipment, schedules and reports of projects they belong to.",
       },
       {
-        title: "API & Postman collection",
-        description: "Express service with PostgreSQL and ready-made requests for a quick start.",
+        title: "Unified reporting",
+        description: "Equipment, schedule and parts status come together in reports and on the dashboard.",
       },
     ],
   },
@@ -719,11 +789,77 @@ const en: typeof fa = {
           "Persian and English. The Persian UI is fully right-to-left with Yekan Bakh typography, and the chosen language is stored for the user's session.",
       },
       {
-        question: "What is needed to connect to the API?",
+        question: "Can I manage several projects at once?",
         answer:
-          "The panel runs on an Express and PostgreSQL API with JWT authentication. A Postman collection for both projects is included in the repository.",
+          "The panel is built for multiple projects; use the project selector in the header to switch between them, and each project keeps its own equipment, schedules and reports.",
       },
     ],
+  },
+  about: {
+    eyebrow: "About us",
+    title: "We make preventive maintenance simple and dependable",
+    description:
+      "PM Project grew from a real need: maintenance teams shouldn't hunt through scattered files to understand equipment, schedules and delays.",
+    missionTitle: "Our mission",
+    missionText:
+      "Turn maintenance data from scattered files and manual reminders into a clear, project-based workflow you can track.",
+    values: [
+      {
+        title: "Clarity",
+        text: "Equipment, schedule and part status should be clear at a glance — without manual reports and scattered calculations.",
+      },
+      {
+        title: "Prevention over reaction",
+        text: "Alerts for delays and expiring parts reduce cost and downtime before they become critical.",
+      },
+      {
+        title: "Persian-first and project-based",
+        text: "A bilingual UI, role-based access and per-project data separation make the tool a good fit for Iranian teams.",
+      },
+    ],
+    storyTitle: "How we work",
+    storyText:
+      "Every panel capability comes from a real maintenance workflow: defining projects and equipment, scheduling service, logging operations, tracking parts and reporting. AI analysis reads the same data so the next action is clear.",
+    bullets: [
+      "Project-based with role-based access",
+      "Preventive, corrective and emergency schedules",
+      "The next schedule is created automatically after a service",
+      "30-day spare-part expiry alerts",
+    ],
+    ctaTitle: "Have a question, or ready to start?",
+    ctaText: "Get in touch to learn more about the panel or start using it.",
+    ctaContact: "Contact us",
+    ctaPanel: "Open the panel",
+  },
+  contact: {
+    eyebrow: "Contact us",
+    title: "Talk to the PM Project team",
+    description:
+      "Ask about the panel, an organization-wide deployment or a partnership; we'll get back to you as soon as we can.",
+    emailLabel: "Email",
+    phoneLabel: "Phone",
+    hoursLabel: "Support hours",
+    hoursValue: "Saturday–Wednesday, 9am–5pm",
+    form: {
+      title: "Send a message",
+      description:
+        "Fill in the form; pressing send opens your email app with the message ready to go.",
+      name: "Full name",
+      namePlaceholder: "Enter your name",
+      email: "Email",
+      emailPlaceholder: "you@example.com",
+      subject: "Subject",
+      subjectPlaceholder: "Message subject",
+      message: "Message",
+      messagePlaceholder: "Write your message...",
+      submit: "Send message",
+      note: "The message is sent to the PM Project team inbox.",
+      required: "Please fill in your name, email and message.",
+      invalidEmail: "That email address is not valid.",
+      success: "Your email app opened; send the message to finish.",
+    },
+    directTitle: "Email us directly",
+    directText: "If you'd rather write from your own inbox:",
   },
   cta: {
     title: "Move maintenance from reactive to preventive",
