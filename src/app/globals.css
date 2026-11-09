@@ -1,0 +1,143 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Yekan Bakh variable font (Persian + Latin). The panel already ships this
+   family in pm-project-client/public/fonts/webfonts; the same files are used
+   here so the landing page matches the product typography. */
+@font-face {
+  font-family: "Yekan Bakh";
+  src:
+    url("/fonts/YekanBakh-VF.woff2") format("woff2"),
+    url("/fonts/YekanBakh-VF.woff") format("woff");
+  font-weight: 100 950;
+  font-stretch: 62.5% 150%;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Yekan Bakh FaNum";
+  src:
+    url("/fonts/YekanBakhFaNum-VF.woff2") format("woff2"),
+    url("/fonts/YekanBakhFaNum-VF.woff") format("woff");
+  font-weight: 100 950;
+  font-stretch: 62.5% 150%;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --font-sans: "Yekan Bakh", "Iranian Sans", Tahoma, system-ui, sans-serif;
+  --font-display: "Yekan Bakh", "Iranian Sans", Tahoma, system-ui, sans-serif;
+
+  --color-brand-50: #eff6ff;
+  --color-brand-100: #dbeafe;
+  --color-brand-200: #bfdbfe;
+  --color-brand-300: #93c5fd;
+  --color-brand-400: #60a5fa;
+  --color-brand-500: #3b82f6;
+  --color-brand-600: #2563eb;
+  --color-brand-700: #1d4ed8;
+  --color-brand-800: #1e40af;
+  --color-brand-900: #1e3a8a;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+  }
+
+  *,
+  ::before,
+  ::after {
+    border-color: #e2e8f0;
+  }
+
+  .dark *,
+  .dark ::before,
+  .dark ::after {
+    border-color: #1e293b;
+  }
+
+  .dark {
+    color-scheme: dark;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    letter-spacing: 0;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background-color: #dbeafe;
+    color: #1e3a8a;
+  }
+
+  .dark ::selection {
+    background-color: #1e3a8a;
+    color: #eff6ff;
+  }
+
+  summary::-webkit-details-marker {
+    display: none;
+  }
+}
+
+.bg-grid {
+  background-image:
+    linear-gradient(to right, rgb(15 23 42 / 0.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(15 23 42 / 0.045) 1px, transparent 1px);
+  background-size: 44px 44px;
+  -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 20%, black 25%, transparent 80%);
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 20%, black 25%, transparent 80%);
+}
+
+.dark .bg-grid {
+  background-image:
+    linear-gradient(to right, rgb(248 250 252 / 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(248 250 252 / 0.05) 1px, transparent 1px);
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-float {
+  animation: float 7s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: float 9s ease-in-out infinite;
+}
+
+.animate-rise {
+  animation: rise 0.7s ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-float,
+  .animate-float-slow,
+  .animate-rise {
+    animation: none;
+  }
+}
