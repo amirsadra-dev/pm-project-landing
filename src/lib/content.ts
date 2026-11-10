@@ -428,7 +428,7 @@ const fa = {
     eyebrow: "مشخصات رسمی",
     title: "مشخصات رسمی شرکت",
     description:
-      "PM محصول شرکت دایان ارتباط مدرن آسیا است. اطلاعات ثبتی، نشانی‌ها و حساب‌های بانکی رسمی شرکت در ادامه آمده است.",
+      "PM محصول شرکت دایان ارتباط مدرن آسیا است. اطلاعات ثبتی و نشانی‌های رسمی شرکت در ادامه آمده است.",
     activity: "طراحی، تأمین و اجرای سیستم‌های اعلام و اطفاء حریق",
     legalNameLabel: "نام شرکت",
     legalName: "دایان ارتباط مدرن آسیا",
@@ -439,8 +439,6 @@ const fa = {
     ceoValue: "علیرضا حسین‌خانی",
     registrationLabel: "شماره ثبت",
     registrationValue: "22268",
-    nationalIdLabel: "شناسه ملی / شماره اقتصادی",
-    nationalIdValue: "14011475143",
     postalLabel: "کد پستی",
     postalValue: "8917697998",
     telLabel: "تلفن / فکس",
@@ -454,26 +452,6 @@ const fa = {
     shippingAddressValue:
       "استان یزد، خیابان مطهری، پارک علم و فناوری اقبال، مرکز رشد IT، واحد ۱۲۱",
     shippingNote: "قبل از ارسال محموله، حتماً با شرکت هماهنگ کنید.",
-    bankTitle: "حساب‌های بانکی رسمی",
-    bankCardLabel: "شماره کارت رسمی شرکت",
-    bankIbanLabel: "شماره شبا",
-    bankHolderLabel: "دارنده حساب",
-    bankHolderValue: "شرکت دایان ارتباط مدرن آسیا",
-    bankAccountNoLabel: "شماره حساب",
-    accounts: [
-      {
-        bank: "بانک تجارت",
-        card: "5859 8388 0006 7328",
-        iban: "IR63 0180 0000 0000 2004 5190 89",
-        accountNo: "",
-      },
-      {
-        bank: "بانک مهر ایران",
-        card: "6063 7312 1047 7809",
-        iban: "IR98 0600 7618 0111 7520 4420 01",
-        accountNo: "761801117520442001",
-      },
-    ],
   },
   cta: {
     title: "نگهداری را از واکنش، به پیشگیری ببرید",
@@ -916,7 +894,7 @@ const en: typeof fa = {
     eyebrow: "Official details",
     title: "Official company details",
     description:
-      "PM Project is a product of Dayan Ertebat Modern Asia. The company's official registration, address and bank account details are below.",
+      "PM Project is a product of Dayan Ertebat Modern Asia. The company's official registration and address details are below.",
     activity: "Design, supply and installation of fire alarm and suppression systems",
     legalNameLabel: "Company name",
     legalName: "Dayan Ertebat Modern Asia",
@@ -927,8 +905,6 @@ const en: typeof fa = {
     ceoValue: "Alireza Hosseinkhani",
     registrationLabel: "Registration no.",
     registrationValue: "22268",
-    nationalIdLabel: "National ID / Economic no.",
-    nationalIdValue: "14011475143",
     postalLabel: "Postal code",
     postalValue: "8917697998",
     telLabel: "Tel / Fax",
@@ -942,26 +918,6 @@ const en: typeof fa = {
     shippingAddressValue:
       "Yazd Province, Motahari St., Eghbal Science & Technology Park, IT Incubator Center, Unit 121",
     shippingNote: "Please coordinate with the company before shipping any consignment.",
-    bankTitle: "Official bank accounts",
-    bankCardLabel: "Official company card",
-    bankIbanLabel: "IBAN (Sheba)",
-    bankHolderLabel: "Account holder",
-    bankHolderValue: "Dayan Ertebat Modern Asia Co.",
-    bankAccountNoLabel: "Account no.",
-    accounts: [
-      {
-        bank: "Tejarat Bank",
-        card: "5859 8388 0006 7328",
-        iban: "IR63 0180 0000 0000 2004 5190 89",
-        accountNo: "",
-      },
-      {
-        bank: "Mehr Iran Bank",
-        card: "6063 7312 1047 7809",
-        iban: "IR98 0600 7618 0111 7520 4420 01",
-        accountNo: "761801117520442001",
-      },
-    ],
   },
   cta: {
     title: "Move maintenance from reactive to preventive",

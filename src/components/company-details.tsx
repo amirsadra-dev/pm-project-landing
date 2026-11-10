@@ -1,6 +1,6 @@
 "use client";
 
-import { BoxIcon, BriefcaseIcon, CreditCardIcon, HomeIcon } from "./icons";
+import { BoxIcon, BriefcaseIcon, HomeIcon } from "./icons";
 import { useSite } from "./site-provider";
 
 export function CompanyDetails() {
@@ -12,7 +12,6 @@ export function CompanyDetails() {
     { label: company.typeLabel, value: company.typeValue },
     { label: company.ceoLabel, value: company.ceoValue },
     { label: company.registrationLabel, value: company.registrationValue, ltr: true },
-    { label: company.nationalIdLabel, value: company.nationalIdValue, ltr: true },
     { label: company.postalLabel, value: company.postalValue, ltr: true },
     { label: company.telLabel, value: company.telValue, ltr: true },
     { label: company.shippingContactLabel, value: company.shippingContactValue, ltr: true },
@@ -84,70 +83,6 @@ export function CompanyDetails() {
                 {company.shippingAddressValue}
               </p>
             </div>
-          </div>
-        </div>
-
-        <div className="mt-10">
-          <h3 className="flex items-center gap-2 text-lg font-black text-slate-900 dark:text-white">
-            <CreditCardIcon className="size-5 text-brand-600 dark:text-brand-400" />
-            {company.bankTitle}
-          </h3>
-          <div className="mt-4 grid gap-3 sm:grid-cols-2">
-            {company.accounts.map((account) => (
-              <article
-                key={account.bank}
-                className="rounded-2xl border border-slate-200 bg-white p-5 dark:border-slate-800 dark:bg-slate-900"
-              >
-                <p className="text-sm font-extrabold text-slate-900 dark:text-white">
-                  {account.bank}
-                </p>
-                <dl className="mt-3 space-y-3 text-xs">
-                  <div>
-                    <dt className="text-slate-500 dark:text-slate-400">
-                      {company.bankCardLabel}
-                    </dt>
-                    <dd
-                      className="mt-0.5 text-sm font-bold tracking-wide text-slate-900 tabular-nums dark:text-slate-100"
-                      dir="ltr"
-                    >
-                      {account.card}
-                    </dd>
-                  </div>
-                  <div>
-                    <dt className="text-slate-500 dark:text-slate-400">
-                      {company.bankIbanLabel}
-                    </dt>
-                    <dd
-                      className="mt-0.5 text-sm font-bold tracking-wide text-slate-900 tabular-nums dark:text-slate-100"
-                      dir="ltr"
-                    >
-                      {account.iban}
-                    </dd>
-                  </div>
-                  {account.accountNo ? (
-                    <div>
-                      <dt className="text-slate-500 dark:text-slate-400">
-                        {company.bankAccountNoLabel}
-                      </dt>
-                      <dd
-                        className="mt-0.5 text-sm font-bold tracking-wide text-slate-900 tabular-nums dark:text-slate-100"
-                        dir="ltr"
-                      >
-                        {account.accountNo}
-                      </dd>
-                    </div>
-                  ) : null}
-                  <div>
-                    <dt className="text-slate-500 dark:text-slate-400">
-                      {company.bankHolderLabel}
-                    </dt>
-                    <dd className="mt-0.5 text-sm text-slate-700 dark:text-slate-300">
-                      {company.bankHolderValue}
-                    </dd>
-                  </div>
-                </dl>
-              </article>
-            ))}
           </div>
         </div>
 
