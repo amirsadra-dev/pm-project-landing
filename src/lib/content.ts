@@ -3,10 +3,10 @@ export type Theme = "light" | "dark";
 
 const fa = {
   brand: {
-    name: "پیام پروژه",
+    name: "PM",
     tagline: "سیستم مدیریت نگهداری پیشگیرانه",
     description:
-      "پیام پروژه تجهیزات، برنامه‌های نگهداری، سوابق سرویس، قطعات یدکی و گزارش‌ها را در یک پنل پروژه‌محور با دسترسی نقش‌محور یکپارچه می‌کند.",
+      "PM یک پنل مدیریت پروژه است که تجهیزات، برنامه‌های نگهداری، سوابق سرویس، قطعات یدکی و گزارش‌ها را با دسترسی نقش‌محور یکپارچه می‌کند.",
   },
   ui: {
     login: "ورود",
@@ -37,7 +37,7 @@ const fa = {
     titleAccent: "قبل از وقوع",
     titleTrail: "ببینید",
     description:
-      "پیام پروژه تجهیزات، برنامه‌های نگهداری، سوابق سرویس و قطعات یدکی را در یک پنل پروژه‌محور کنار هم می‌آورد؛ با دسترسی نقش‌محور و گزارش‌هایی که تأخیرها را پیش از بحرانی شدن نشان می‌دهند.",
+      "PM تجهیزات، برنامه‌های نگهداری، سوابق سرویس و قطعات یدکی را در یک پنل پروژه‌محور کنار هم می‌آورد؛ با دسترسی نقش‌محور و گزارش‌هایی که تأخیرها را پیش از بحرانی شدن نشان می‌دهند.",
     ctaPrimary: "ورود به پنل",
     ctaSecondary: "آشنایی با امکانات",
     trust: ["رابط فارسی و راست‌به‌چپ", "دسترسی نقش‌محور", "گزارش‌های زنده"],
@@ -101,7 +101,7 @@ const fa = {
       {
         title: "تحلیل هوشمند گزارش‌ها",
         description:
-          "خلاصه وضعیت، آمار، قطعات نزدیک انقضا و رکوردهای گزارش را به مدل هوش مصنوعی بدهید و تحلیل بگیرید.",
+          "در خود صفحه گزارش‌ها، هوش مصنوعی به داده گزارش دسترسی دارد و وضعیت، تأخیرها و ریسک‌ها را تحلیل می‌کند.",
       },
       {
         title: "قطعات یدکی و انقضا",
@@ -217,7 +217,7 @@ const fa = {
       },
       reports: {
         title: "گزارش‌های نگهداری",
-        subtitle: "گزارش و تحلیل سوابق نگهداری همه تجهیزات.",
+        subtitle: "گزارش و تحلیل سوابق نگهداری همه تجهیزات، با بررسی هوشمند داده‌ها.",
         refresh: "بازخوانی",
         summary: [
           { title: "کل تجهیزات", value: "۱۲۸" },
@@ -265,9 +265,9 @@ const fa = {
     badge: "تحلیل هوشمند",
     title: "گزارش‌ها را بخوانید، نه فقط جمع کنید",
     description:
-      "وضعیت نگهداری را با هوش مصنوعی تحلیل کنید. پنل داده‌های گزارش فعلی را به مدل می‌فرستد و یک تحلیل خوانا از تأخیرها، ریسک‌ها و اقدام‌های پیشنهادی برمی‌گرداند.",
+      "هوش مصنوعی داخل خود صفحه گزارش‌ها به داده گزارش دسترسی دارد؛ همان داده‌ای که با فیلترها و بازه زمانی فعلی روی صفحه می‌بینید. پنل آمار، رکوردها و قطعات نزدیک انقضا را به مدل می‌دهد و تحلیل خوانایی از تأخیرها، ریسک‌ها و اقدام‌های پیشنهادی برمی‌گرداند.",
     inputs: [
-      "فیلترها و بازه زمانی انتخاب‌شده",
+      "دسترسی مستقیم به داده گزارش‌های صفحه، با همان فیلترها و بازه زمانی",
       "آمار خلاصه گزارش (تعداد، وضعیت و هزینه)",
       "قطعات در آستانه انقضا",
       "رکوردهای گزارش برای بررسی دقیق‌تر",
@@ -362,7 +362,7 @@ const fa = {
     eyebrow: "درباره ما",
     title: "نگهداری پیشگیرانه را ساده و قابل اتکا می‌کنیم",
     description:
-      "پیام پروژه از یک نیاز واقعی شکل گرفت: تیم‌های نگهداری به‌جای جست‌وجو در فایل‌های پراکنده، باید تصویر روشنی از تجهیزات، برنامه‌ها و تأخیرها داشته باشند.",
+      "PM از یک نیاز واقعی شکل گرفت: تیم‌های نگهداری به‌جای جست‌وجو در فایل‌های پراکنده، باید تصویر روشنی از تجهیزات، برنامه‌ها و تأخیرها داشته باشند.",
     missionTitle: "ماموریت ما",
     missionText:
       "داده‌های نگهداری را از فایل‌های پراکنده و یادآوری‌های دستی به یک جریان کاری روشن، پروژه‌محور و قابل پیگیری تبدیل کنیم.",
@@ -396,7 +396,7 @@ const fa = {
   },
   contact: {
     eyebrow: "تماس با ما",
-    title: "با تیم پیام پروژه صحبت کنید",
+    title: "با تیم PM صحبت کنید",
     description:
       "برای سوال درباره پنل، استقرار سازمانی یا همکاری پیام بگذارید؛ در اولین فرصت پاسخ می‌دهیم.",
     emailLabel: "ایمیل",
@@ -416,13 +416,64 @@ const fa = {
       message: "پیام",
       messagePlaceholder: "پیام خود را بنویسید...",
       submit: "ارسال پیام",
-      note: "پیام به ایمیل تیم پیام پروژه ارسال می‌شود.",
+      note: "پیام به ایمیل تیم PM ارسال می‌شود.",
       required: "لطفاً نام، ایمیل و متن پیام را پر کنید.",
       invalidEmail: "قالب ایمیل معتبر نیست.",
       success: "برنامه ایمیل شما باز شد؛ برای نهایی شدن، پیام را ارسال کنید.",
     },
     directTitle: "ارسال مستقیم",
     directText: "اگر ترجیح می‌دهید از ایمیل خودتان بنویسید:",
+  },
+  company: {
+    eyebrow: "مشخصات رسمی",
+    title: "مشخصات رسمی شرکت",
+    description:
+      "PM محصول شرکت دایان ارتباط مدرن آسیا است. اطلاعات ثبتی، نشانی‌ها و حساب‌های بانکی رسمی شرکت در ادامه آمده است.",
+    activity: "طراحی، تأمین و اجرای سیستم‌های اعلام و اطفاء حریق",
+    legalNameLabel: "نام شرکت",
+    legalName: "دایان ارتباط مدرن آسیا",
+    legalNameEn: "Dayan Ertebat Modern Asia",
+    typeLabel: "نوع ثبتی",
+    typeValue: "سهامی خاص",
+    ceoLabel: "مدیرعامل",
+    ceoValue: "علیرضا حسین‌خانی",
+    registrationLabel: "شماره ثبت",
+    registrationValue: "22268",
+    nationalIdLabel: "شناسه ملی / شماره اقتصادی",
+    nationalIdValue: "14011475143",
+    postalLabel: "کد پستی",
+    postalValue: "8917697998",
+    telLabel: "تلفن / فکس",
+    telValue: "035-37334654",
+    shippingContactLabel: "هماهنگی ارسال",
+    shippingContactValue: "09132589168 / 09021215405",
+    invoiceAddressLabel: "آدرس درج در فاکتور",
+    invoiceAddressValue:
+      "استان یزد، شهر یزد، سردوراه، خیابان شهید آیت‌الله مطهری، کوچه ۱۲، پلاک ۱۰۸",
+    shippingAddressLabel: "آدرس ارسال مرسوله",
+    shippingAddressValue:
+      "استان یزد، خیابان مطهری، پارک علم و فناوری اقبال، مرکز رشد IT، واحد ۱۲۱",
+    shippingNote: "قبل از ارسال محموله، حتماً با شرکت هماهنگ کنید.",
+    bankTitle: "حساب‌های بانکی رسمی",
+    bankCardLabel: "شماره کارت رسمی شرکت",
+    bankIbanLabel: "شماره شبا",
+    bankHolderLabel: "دارنده حساب",
+    bankHolderValue: "شرکت دایان ارتباط مدرن آسیا",
+    bankAccountNoLabel: "شماره حساب",
+    accounts: [
+      {
+        bank: "بانک تجارت",
+        card: "5859 8388 0006 7328",
+        iban: "IR63 0180 0000 0000 2004 5190 89",
+        accountNo: "",
+      },
+      {
+        bank: "بانک مهر ایران",
+        card: "6063 7312 1047 7809",
+        iban: "IR98 0600 7618 0111 7520 4420 01",
+        accountNo: "761801117520442001",
+      },
+    ],
   },
   cta: {
     title: "نگهداری را از واکنش، به پیشگیری ببرید",
@@ -434,7 +485,7 @@ const fa = {
     navTitle: "در این صفحه",
     startTitle: "شروع استفاده",
     productLink: "نمای پنل",
-    copyright: "© ۱۴۰۵ پیام پروژه — PM Project",
+    copyright: "© ۱۴۰۵ PM — Project Manager",
   },
 };
 
@@ -538,7 +589,7 @@ const en: typeof fa = {
       {
         title: "AI report analysis",
         description:
-          "Send summary stats, expiring parts and report records to an AI model and get a readable analysis.",
+          "Right inside the reports page, AI has access to the report data and analyzes status, delays and risks.",
       },
       {
         title: "Spare parts & expiry",
@@ -654,7 +705,7 @@ const en: typeof fa = {
       },
       reports: {
         title: "Maintenance reports",
-        subtitle: "Report and analyze maintenance history across all assets.",
+        subtitle: "Report and analyze maintenance history across all assets, with AI-assisted data review.",
         refresh: "Refresh",
         summary: [
           { title: "Total equipment", value: "128" },
@@ -702,9 +753,9 @@ const en: typeof fa = {
     badge: "AI analysis",
     title: "Read your reports, don't just collect them",
     description:
-      "Analyze maintenance status with AI. The panel sends the current report data to the model and returns a readable analysis of delays, risks and recommended actions.",
+      "AI works inside the reports page with direct access to the report data — the same records and filters you see on screen. The panel sends the summary, records and expiring parts to the model and returns a readable analysis of delays, risks and recommended actions.",
     inputs: [
-      "Selected filters and date range",
+      "Direct access to the report data on the page, with the current filters and date range",
       "Report summary statistics (counts, status and cost)",
       "Parts nearing expiry",
       "Report records for deeper inspection",
@@ -861,6 +912,57 @@ const en: typeof fa = {
     directTitle: "Email us directly",
     directText: "If you'd rather write from your own inbox:",
   },
+  company: {
+    eyebrow: "Official details",
+    title: "Official company details",
+    description:
+      "PM Project is a product of Dayan Ertebat Modern Asia. The company's official registration, address and bank account details are below.",
+    activity: "Design, supply and installation of fire alarm and suppression systems",
+    legalNameLabel: "Company name",
+    legalName: "Dayan Ertebat Modern Asia",
+    legalNameEn: "دایان ارتباط مدرن آسیا",
+    typeLabel: "Company type",
+    typeValue: "Private Joint Stock Company",
+    ceoLabel: "CEO",
+    ceoValue: "Alireza Hosseinkhani",
+    registrationLabel: "Registration no.",
+    registrationValue: "22268",
+    nationalIdLabel: "National ID / Economic no.",
+    nationalIdValue: "14011475143",
+    postalLabel: "Postal code",
+    postalValue: "8917697998",
+    telLabel: "Tel / Fax",
+    telValue: "035-37334654",
+    shippingContactLabel: "Shipping contact",
+    shippingContactValue: "09132589168 / 09021215405",
+    invoiceAddressLabel: "Invoice address",
+    invoiceAddressValue:
+      "Yazd Province, Yazd City, Sardoraah, Shahid Ayatollah Motahari St., Alley 12, No. 108",
+    shippingAddressLabel: "Shipping address",
+    shippingAddressValue:
+      "Yazd Province, Motahari St., Eghbal Science & Technology Park, IT Incubator Center, Unit 121",
+    shippingNote: "Please coordinate with the company before shipping any consignment.",
+    bankTitle: "Official bank accounts",
+    bankCardLabel: "Official company card",
+    bankIbanLabel: "IBAN (Sheba)",
+    bankHolderLabel: "Account holder",
+    bankHolderValue: "Dayan Ertebat Modern Asia Co.",
+    bankAccountNoLabel: "Account no.",
+    accounts: [
+      {
+        bank: "Tejarat Bank",
+        card: "5859 8388 0006 7328",
+        iban: "IR63 0180 0000 0000 2004 5190 89",
+        accountNo: "",
+      },
+      {
+        bank: "Mehr Iran Bank",
+        card: "6063 7312 1047 7809",
+        iban: "IR98 0600 7618 0111 7520 4420 01",
+        accountNo: "761801117520442001",
+      },
+    ],
+  },
   cta: {
     title: "Move maintenance from reactive to preventive",
     description: "Create an account and set up your first project, equipment and maintenance schedule in minutes.",
@@ -871,7 +973,7 @@ const en: typeof fa = {
     navTitle: "On this page",
     startTitle: "Get started",
     productLink: "Panel preview",
-    copyright: "© 2026 PM Project — پیام پروژه",
+    copyright: "© 2026 PM — Project Manager",
   },
 };
 

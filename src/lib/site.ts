@@ -1,17 +1,17 @@
 const appUrl = (process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:5173").replace(/\/+$/, "");
 
 export const site = {
-  name: "پیام پروژه",
+  name: "PM",
   nameEn: "PM Project",
   tagline: "سیستم مدیریت نگهداری پیشگیرانه",
   description:
-    "پیام پروژه تجهیزات، برنامه‌های نگهداری، سوابق سرویس، قطعات یدکی و گزارش‌ها را در یک پنل پروژه‌محور با دسترسی نقش‌محور یکپارچه می‌کند.",
+    "PM یک پنل مدیریت پروژه است که تجهیزات، برنامه‌های نگهداری، سوابق سرویس، قطعات یدکی و گزارش‌ها را با دسترسی نقش‌محور یکپارچه می‌کند.",
   appUrl,
   loginUrl: `${appUrl}/login`,
   registerUrl: `${appUrl}/register`,
-  // Replace these placeholders with the real inbox and phone number before launch.
+  // Phone comes from the official company details; the inbox is still a placeholder.
   contactEmail: "hello@pm-project.ir",
-  contactPhone: "+98 21 0000 0000",
+  contactPhone: "035-37334654",
 } as const;
 
 export const navigation = [

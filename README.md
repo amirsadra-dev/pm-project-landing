@@ -1,6 +1,6 @@
-# پیام پروژه — لندینگ
+# PM — لندینگ
 
-لندینگ‌پیج فارسی (راست‌به‌چپ) برای پنل **پیام پروژه** (PM Project)، ساخته‌شده با Next.js App Router، React و Tailwind CSS v4 و فونت **یکان‌بخ**.
+لندینگ‌پیج فارسی (راست‌به‌چپ) برای پنل **PM** (Project Manager)، ساخته‌شده با Next.js App Router، React و Tailwind CSS v4 و فونت **یکان‌بخ**.
 
 ## اجرا
 

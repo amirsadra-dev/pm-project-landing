@@ -12,7 +12,8 @@ export const metadata: Metadata = {
     "مدیریت تجهیزات",
     "برنامه نگهداری",
     "CMMS",
-    "پیام پروژه",
+    "PM",
+    "مدیریت پروژه",
   ],
   openGraph: {
     title: `${site.name} | ${site.tagline}`,

@@ -4,9 +4,9 @@ import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 
 export const metadata: Metadata = {
-  title: "درباره ما | پیام پروژه",
+  title: "درباره ما | PM",
   description:
-    "درباره پیام پروژه، ماموریت و رویکرد تیم در ساده‌سازی نگهداری پیشگیرانه و مدیریت تجهیزات.",
+    "درباره PM (Project Manager)، ماموریت و رویکرد تیم در ساده‌سازی نگهداری پیشگیرانه و مدیریت تجهیزات.",
 };
 
 export default function AboutPage() {

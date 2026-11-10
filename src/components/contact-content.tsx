@@ -2,6 +2,7 @@
 
 import { useState, type FormEvent } from "react";
 import { ClockIcon, MailIcon, PhoneIcon } from "./icons";
+import { CompanyDetails } from "./company-details";
 import { site } from "@/lib/site";
 import { useSite } from "./site-provider";
 
@@ -14,6 +15,7 @@ export function ContactContent() {
   const { t } = useSite();
   const contact = t.contact;
   const formText = contact.form;
+
 
   const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
   const [error, setError] = useState<"required" | "email" | null>(null);
@@ -246,6 +248,8 @@ export function ContactContent() {
           </div>
         </div>
       </section>
+
+      <CompanyDetails />
     </>
   );
 }

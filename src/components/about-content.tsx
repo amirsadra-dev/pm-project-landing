@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { ArrowLeftIcon, CheckIcon, GlobeIcon, ShieldIcon, SparklesIcon } from "./icons";
 import { site } from "@/lib/site";
+import { CompanyDetails } from "./company-details";
 import { useSite } from "./site-provider";
 
 const valueIcons = [ShieldIcon, SparklesIcon, GlobeIcon];
@@ -135,6 +136,8 @@ export function AboutContent() {
           </div>
         </div>
       </section>
+
+      <CompanyDetails />
     </>
   );
 }
